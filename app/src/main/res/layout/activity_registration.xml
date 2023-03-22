@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.RegistrationActivity">
+
+    <CheckBox
+        android:id="@+id/checkBoxAgreement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textColor="@android:color/holo_red_light"
+        android:text="@string/strAgreement"
+        android:fontFamily="@font/alegreya_medium"
+        app:layout_constraintEnd_toEndOf="@+id/edTextRepeatPassword"
+        app:layout_constraintStart_toStartOf="@+id/edTextRepeatPassword"
+        app:layout_constraintTop_toBottomOf="@+id/edTextRepeatPassword" />
+
+    <ImageView
+        android:id="@+id/imageViewLogo"
+        android:layout_width="316dp"
+        android:layout_height="92dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/caravan12logo" />
+
+    <EditText
+        android:id="@+id/edTextEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:fontFamily="@font/alegreya_regular"
+        android:hint="@string/strEmail"
+        android:padding="10dp"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/edTextnName"
+        app:layout_constraintStart_toStartOf="@+id/edTextnName"
+        app:layout_constraintTop_toBottomOf="@+id/edTextnName" />
+
+    <EditText
+        android:id="@+id/edTextnName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="64dp"
+        android:fontFamily="@font/alegreya_regular"
+        android:textSize="20sp"
+        android:ems="10"
+        android:hint="@string/strName"
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewRegistration" />
+
+    <EditText
+        android:id="@+id/edTextPhone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:fontFamily="@font/alegreya_regular"
+        android:textSize="20sp"
+        android:hint="@string/strPhoneNumber"
+        android:inputType="phone"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/edTextEmail"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/edTextEmail"
+        app:layout_constraintTop_toBottomOf="@+id/edTextEmail" />
+
+    <EditText
+        android:id="@+id/edTextPassword"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:fontFamily="@font/alegreya_regular"
+        android:textSize="20sp"
+        android:hint="@string/strPassword"
+        android:inputType="textPassword"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/edTextPhone"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/edTextPhone"
+        app:layout_constraintTop_toBottomOf="@+id/edTextPhone" />
+
+    <EditText
+        android:id="@+id/edTextRepeatPassword"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:fontFamily="@font/alegreya_regular"
+        android:textSize="20sp"
+        android:hint="@string/strRepeatPassword"
+        android:inputType="textPassword"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/edTextPassword"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/edTextPassword"
+        app:layout_constraintTop_toBottomOf="@+id/edTextPassword" />
+
+    <TextView
+        android:id="@+id/textViewRegistration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="@font/alegreya_medium"
+        android:padding="10dp"
+        android:text="@string/tViewSignUp"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewLogo"
+        app:layout_constraintHorizontal_bias="0.645"
+        app:layout_constraintStart_toStartOf="@+id/imageViewLogo"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewLogo" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonMakeCall"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/sky_darkBlue"
+        android:fontFamily="@font/alegreya_medium"
+        android:onClick="onClickSignUp"
+        android:padding="10dp"
+        android:text="@string/buttonSignUp"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        app:cornerRadius="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxAgreement"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textViewBackToLogin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/alegreya_regular"
+        android:textSize="20sp"
+        android:text="@string/textViewBackToLogin"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/buttonMakeCall"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@+id/buttonMakeCall"
+        app:layout_constraintTop_toBottomOf="@+id/buttonMakeCall" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

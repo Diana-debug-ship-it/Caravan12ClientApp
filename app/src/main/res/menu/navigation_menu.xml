@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homePage"
+        android:title="@string/nav_menu_homePage"
+        android:icon="@drawable/ic_home"/>
+
+    <item
+        android:id="@+id/searchHotels"
+        android:title="@string/nav_menu_site"
+        android:icon="@drawable/ic_search"/>
+    <item
+        android:id="@+id/tripSelection"
+        android:title="@string/nav_menu_tourRequest"
+        android:icon="@drawable/ic_find_tour"/>
+    <item
+        android:id="@+id/info"
+        android:title="@string/nav_menu_info"
+        android:icon="@drawable/ic_info"/>
+<!--    <item-->
+<!--        android:id="@+id/events"-->
+<!--        android:title="Акции"-->
+<!--        android:icon="@drawable/ic_department"/>-->
+    <item
+        android:id="@+id/myAccount"
+        android:title="@string/nav_menu_myAccount"
+        android:icon="@drawable/ic_my_account"/>
+</menu>

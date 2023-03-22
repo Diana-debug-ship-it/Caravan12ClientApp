@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "141210635763",
+    "project_id": "caravan12mobileapp-e1067",
+    "storage_bucket": "caravan12mobileapp-e1067.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:141210635763:android:9ff7e609c5e178e32e1686",
+        "android_client_info": {
+          "package_name": "com.caravan12.DianaRadchuk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "141210635763-o79epea5v89cbu8ek81gm6fhjmjc7ktm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxxTKsecsiCCzHBUmcNOiAUTudP2w5mvU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "141210635763-o79epea5v89cbu8ek81gm6fhjmjc7ktm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
