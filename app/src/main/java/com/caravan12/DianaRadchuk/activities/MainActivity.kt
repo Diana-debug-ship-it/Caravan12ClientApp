@@ -4,6 +4,8 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Parcelable
+import android.util.Log
 import android.widget.TextView
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.fragment.app.Fragment
@@ -19,6 +21,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        Log.i("run", "onCreate")
         binding = ActivityMainBinding.inflate(layoutInflater)
         bindingHeader = HeaderLayoutBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -38,20 +42,24 @@ class MainActivity : AppCompatActivity() {
                         startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("http://karavan-12.ru/")))
                     }
                     R.id.tripSelection -> {
-                        showFragment(FillTheApplicationFragment.newInstance())
+                        showFragment(FillTheApplicationFragment())
                         myDrawerLayout.close()
                     }
                     R.id.info -> {
-                        showFragment(InformationFragment.newInstance())
+                        showFragment(InformationFragment())
                         myDrawerLayout.close()
                     }
 
                     R.id.myAccount -> {
-                        showFragment(MyProfileFragment.newInstance())
+                        showFragment(MyProfileFragment())
                         myDrawerLayout.close()
                     }
                     R.id.homePage -> {
-                        showFragment(HomeFragment.newInstance())
+                        showFragment(HomeFragment())
+                        myDrawerLayout.close()
+                    }
+                    R.id.events -> {
+                        showFragment(EventsFragment())
                         myDrawerLayout.close()
                     }
                 }
@@ -68,7 +76,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        showFragment(HomeFragment.newInstance())
+        showFragment(HomeFragment())
     }
 
     private fun showFragment(fragment: Fragment){

@@ -43,22 +43,23 @@ class InformationFragment : Fragment() {
         setAdapter()
 
         binding.imageViewWhatsApp.setOnClickListener{
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://api.whatsapp.com/send?phone=+79600765094&text=Пишу из приложения Caravan-12"))
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://api.whatsapp.com/send?phone=+79172688408&text=Пишу из приложения Caravan-12"))
             startActivity(intent)
         }
         binding.buttonMakeCall.setOnClickListener{
-            val phone_intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:+79600756781"))
+            val phone_intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:+78552380012"))
             startActivity(phone_intent)
+        }
+
+        binding.imageViewVk.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://vk.com/karavan12"))
+            startActivity(intent);
         }
     }
 
     companion object {
         @JvmStatic
-        fun newInstance() =
-            InformationFragment().apply {
-                arguments = Bundle().apply {
-                }
-            }
+        fun newInstance() = InformationFragment
     }
 
     private fun openContacts() {

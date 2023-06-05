@@ -11,9 +11,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="24dp"
-        android:padding="15dp"
         android:layout_marginEnd="32dp"
         android:fontFamily="@font/alegreya_medium"
+        android:padding="15dp"
         android:text="@string/fillTheApplication"
         android:textAlignment="center"
         android:textColor="@color/dark_blue_text"
@@ -25,14 +25,13 @@
 
     <EditText
         android:id="@+id/editTextDateOfdeparture"
-        android:layout_width="0dp"
+        android:layout_width="127dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:ems="10"
+        android:textSize="16sp"
         android:fontFamily="@font/alegreya_medium"
         android:hint="@string/hintDateOfDeparture"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTo"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/editTextTo"
         app:layout_constraintTop_toBottomOf="@+id/editTextTo" />
 
@@ -40,29 +39,46 @@
         android:id="@+id/editTextNights"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
         android:ems="10"
+        android:textSize="16sp"
         android:fontFamily="@font/alegreya_medium"
         android:hint="@string/hintNights"
         android:inputType="number"
-        app:layout_constraintEnd_toEndOf="@+id/editTextDateOfdeparture"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextDateOfdeparture"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDateOfdeparture" />
+        app:layout_constraintBottom_toBottomOf="@+id/editTextDateOfdeparture"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTo"
+        app:layout_constraintStart_toEndOf="@+id/editTextDateOfdeparture"
+        app:layout_constraintTop_toTopOf="@+id/editTextDateOfdeparture" />
+
 
     <EditText
         android:id="@+id/editTextPeople"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:ems="10"
         android:fontFamily="@font/alegreya_medium"
         android:hint="@string/hintNumberOfPeople"
         android:inputType="number"
-        app:layout_constraintEnd_toEndOf="@+id/editTextDateOfdeparture"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/editTextDateOfdeparture"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNights" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextDateOfdeparture" />
+
+    <EditText
+        android:id="@+id/editTextChildren"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:fontFamily="@font/alegreya_medium"
+        android:hint="Дети"
+        android:inputType="number"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextPeople"
+        app:layout_constraintEnd_toEndOf="@+id/editTextNights"
+        app:layout_constraintHorizontal_bias="0.847"
+        app:layout_constraintStart_toEndOf="@+id/editTextPeople"
+        app:layout_constraintTop_toTopOf="@+id/editTextPeople"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/editTextFrom"
@@ -70,8 +86,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:ems="10"
-        android:hint="@string/hintFrom"
+        android:textSize="16sp"
         android:fontFamily="@font/alegreya_medium"
+        android:hint="@string/hintFrom"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="@+id/textViewFillTheApplication"
         app:layout_constraintHorizontal_bias="0.0"
@@ -79,49 +96,98 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewFillTheApplication" />
 
     <EditText
-        android:id="@+id/editTextTo"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:hint="@string/hintWhere"
-        android:fontFamily="@font/alegreya_medium"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/editTextFrom"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextFrom"
-        app:layout_constraintTop_toBottomOf="@+id/editTextFrom" />
-
-    <EditText
         android:id="@+id/editTextComments"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:ems="10"
-        android:hint="@string/hintComments"
         android:fontFamily="@font/alegreya_medium"
+        android:hint="Здесь вы можете указать свои пожелания к туру"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/editTextPeople"
-        app:layout_constraintStart_toStartOf="@+id/editTextPeople"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPeople" />
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/tInputLayoutRating"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tInputLayoutRating"
+        app:layout_constraintTop_toBottomOf="@+id/tInputLayoutRating" />
+
+    <EditText
+        android:id="@+id/editTextTo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:fontFamily="@font/alegreya_medium"
+        android:hint="@string/hintWhere"
+        android:inputType="textPersonName"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/editTextFrom"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextFrom"
+        app:layout_constraintTop_toBottomOf="@+id/editTextFrom" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonSend"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:backgroundTint="@color/sky_darkBlue"
-        android:fontFamily="@font/alegreya_medium"
-        android:padding="10dp"
         android:clickable="true"
-        android:text="@string/buttonSendApplication"
+        android:focusable="true"
+        android:fontFamily="@font/alegreya_medium"
         android:onClick="onClickSendApplication"
+        android:padding="10dp"
+        android:text="@string/buttonSendApplication"
         android:textAlignment="center"
         android:textSize="14sp"
         app:cornerRadius="200dp"
         app:layout_constraintEnd_toEndOf="@+id/editTextComments"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/editTextComments"
-        app:layout_constraintTop_toBottomOf="@+id/editTextComments"
-        android:focusable="true" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextComments" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+        android:id="@+id/tInputLayoutMeals"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/editTextChildren"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextPeople"
+        app:layout_constraintTop_toBottomOf="@+id/editTextChildren">
+
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteTVMeals"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alegreya_regular"
+            android:layout_weight="1"
+            android:inputType="none"
+            android:textSize="16sp"
+            android:text="Питание" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tInputLayoutRating"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/tInputLayoutMeals"
+        app:layout_constraintStart_toStartOf="@+id/tInputLayoutMeals"
+        app:layout_constraintTop_toBottomOf="@id/tInputLayoutMeals">
+
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteTVRating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/alegreya_regular"
+            android:inputType="none"
+            android:text="Рейтинг отеля"
+            android:textSize="16sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

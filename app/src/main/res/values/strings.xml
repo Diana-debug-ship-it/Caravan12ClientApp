@@ -50,11 +50,11 @@
     <string name="strSuccessSignUp">Вы успешно зарегистрировались</string>
     <string name="strResetPassword">Сброс пароля</string>
     <string name="strResetPasswordToEmail">Ссылка для сброса пароля будет отправлена на почту, которую вы указали при регистрации</string>
-    <string name="hintDateOfDeparture">Дата выезда</string>
+    <string name="hintDateOfDeparture">Дата отъезда</string>
     <string name="hintNights">Количество ночей</string>
     <string name="hintNumberOfPeople">Количество отдыхающих</string>
     <string name="hintFrom">Откуда</string>
-    <string name="hintWhere">Куда</string>
+    <string name="hintWhere">Место</string>
     <string name="hintComments">Пожелания</string>
     <string name="buttonSendApplication">Оставить заявку</string>
     <string name="strFindAnswersAmongArticles">Найдите ответ среди самых часто задаваемых вопросов</string>
@@ -87,5 +87,34 @@
     <string name="fill_email_field">Пожалуйста, укажите свою электронную почту в поле для электронной почты</string>
     <string name="to_email">\"На почту \"</string>
     <string name="email_verification_sent">\" было оптравлено письмо для подтверждения адреса электронной почты\"</string>
+    <string name="choose_spinner">Выберите вариант из списка</string>
+    <string name="tvUnderlinedApplications"><u>Ваши заявки</u></string>
+    <string name="tvUnderlinedDeleteApplication"><u>Удалить заявку</u></string>
+    <string name="error_try_to_restart">Произошла ошибка при получении данных пользователя. Пожалуйста, попробуйте перезайти в аккаунт</string>
+    <string name="error_loadind_data">Произошла ошибка при загрузке данных</string>
+    <string name="str_signIn_error">Неправильный адрес электронной почты или пароль</string>
+
+    <string-array name="meals">
+        <item>Всё включено ультра, UAI</item>
+        <item>Всё включено, AI</item>
+        <item>Трехразовое ультра, FB+</item>
+        <item>Трехразовое, FB</item>
+        <item>Двухразовое ультра, HB+</item>
+        <item>Двухразовое, HB</item>
+        <item>Только завтраки, BB</item>
+        <item>Самообслуживание, SC</item>
+        <item>Без питания, RO</item>
+    </string-array>
+
+    <string-array name="rating">
+        <item>5*</item>
+        <item>4*</item>
+        <item>3*</item>
+        <item>2*</item>
+        <item>Apts</item>
+        <item>Villas</item>
+        <item>HV-1</item>
+        <item>HV-2</item>
+    </string-array>
 
 </resources>

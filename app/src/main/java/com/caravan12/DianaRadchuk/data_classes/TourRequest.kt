@@ -5,12 +5,16 @@ import java.text.SimpleDateFormat
 import java.util.Date
 
 data class TourRequest(
-    var uid: String? = "",
-    var applicantEmail: String? = "",
+
+    var email: String? = "",
     var from: String? = "",
-    var where: String? = "",
+    var destination: String? = "",
     var dateOfDeparture: String? = "",
     var nights: String? = "",
-    var howManyPeople: String? = "",
-    var comments: String? = ""
+    var adults: String? = "",
+    var comments: String? = "",
+    var children: String? = "",
+    var meals: String? = "",
+    var rating: String? = "",
+    var id: String? = null
 )

@@ -8,7 +8,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.caravan12.DianaRadchuk.R
 import com.caravan12.DianaRadchuk.data_classes.TopDirection
-import com.google.android.material.imageview.ShapeableImageView
 
 class DirectionsRVAdapter(private val topDirectionList: ArrayList<TopDirection>): RecyclerView.Adapter<DirectionsRVAdapter.DirectionsHolder>(){
 

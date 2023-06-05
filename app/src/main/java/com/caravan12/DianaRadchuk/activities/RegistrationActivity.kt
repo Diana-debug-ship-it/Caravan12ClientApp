@@ -4,16 +4,18 @@ import android.app.AlertDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
 import android.text.TextUtils
+import android.text.TextWatcher
 import android.view.View
 import android.widget.Toast
 import com.caravan12.DianaRadchuk.R
-import com.caravan12.DianaRadchuk.data_classes.UserInfo
 import com.caravan12.DianaRadchuk.databinding.ActivityRegistrationBinding
 import com.caravan12.DianaRadchuk.databinding.DialogLoginBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.*
+import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import io.github.muddz.styleabletoast.StyleableToast
 
@@ -24,6 +26,7 @@ class RegistrationActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
     private lateinit var database: FirebaseDatabase
+    private val db = Firebase.firestore
 
     private var emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
 
@@ -36,6 +39,66 @@ class RegistrationActivity : AppCompatActivity() {
         database = FirebaseDatabase.getInstance()
 
         openLoginDialog()
+
+
+        binding.edTextPhone.addTextChangedListener (object : TextWatcher {
+
+            var sb: StringBuilder = StringBuilder()
+            var ignore: Boolean = false
+            private val numPlace = 'X'
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                if (!ignore) {
+                    removeFormat(s.toString())
+                    applyFormat(sb.toString())
+                    ignore = true
+                    s?.replace(0, s.length, sb.toString())
+                    ignore = false
+                }
+            }
+
+            private fun removeFormat(text: String) {
+                sb.setLength(0)
+                for (element in text) {
+                    val c: Char = element
+                    if (isNumberChar(c)) sb.append(c)
+                }
+            }
+
+            private fun applyFormat(text: String) {
+                val template = getTemplate(text)
+                sb.setLength(0)
+                var textIndex = 0
+                for (i in template.indices) {
+                    if (textIndex<text.length) {
+                        if (template[i]==numPlace) {
+                            sb.append(text[textIndex])
+                            textIndex++
+                        } else {
+                            sb.append(template[i])
+                        }
+                    }
+                }
+            }
+
+            private fun isNumberChar(c: Char) : Boolean {return c in '0'..'9' }
+
+            private fun getTemplate(text: String) : String {
+                if (text.startsWith("7")) {
+                    return "+X (XXX) XXX-XX-XX"
+                } else {
+                    return "+XXX (XXX) XX-XX-XX"
+                }
+            }
+        })
+
+
     }
 
     private fun goToMainActivity() {
@@ -86,12 +149,15 @@ class RegistrationActivity : AppCompatActivity() {
                 auth.createUserWithEmailAndPassword(email, password)
                     .addOnSuccessListener {
                         val uid = auth.currentUser!!.uid
-                        val databaseRef = database.reference.child("users").child(uid)
-                        val user = UserInfo(uid, name, number, email)
+                        val user = hashMapOf(
+                            "name" to name,
+                            "number" to number,
+                            "email" to email)
 
-                        databaseRef.setValue(user)
+                        db.collection("users").document(uid).set(user)
                             .addOnSuccessListener {
-                                StyleableToast.makeText(this@RegistrationActivity, getString(R.string.strSuccessSignUp), Toast.LENGTH_SHORT, R.style
+                                StyleableToast.makeText(this@RegistrationActivity, getString(R.string.strSuccessSignUp),
+                                    Toast.LENGTH_SHORT, R.style
                                     .successToast).show()
                                 getCurrentUser()
 
@@ -99,12 +165,14 @@ class RegistrationActivity : AppCompatActivity() {
                                 goToMainActivity()
                             }
                             .addOnFailureListener {
-                                StyleableToast.makeText(this@RegistrationActivity, getString(R.string.str_error), Toast.LENGTH_SHORT, R.style.errorToast).show()
+                                StyleableToast.makeText(this@RegistrationActivity, getString(R.string.str_error),
+                                    Toast.LENGTH_SHORT, R.style.errorToast).show()
                                 deleteUser()
                             }
                     }
                     .addOnFailureListener {
-                        StyleableToast.makeText(this@RegistrationActivity, getString(R.string.str_error), Toast.LENGTH_SHORT, R.style.errorToast).show()
+                        StyleableToast.makeText(this@RegistrationActivity, getString(R.string.str_error),
+                            Toast.LENGTH_SHORT, R.style.errorToast).show()
                     }
             }
         }
@@ -122,7 +190,7 @@ class RegistrationActivity : AppCompatActivity() {
                         getCurrentUser()
                         goToMainActivity()
                     } else {
-                        StyleableToast.makeText(this, getString(R.string.str_error), Toast.LENGTH_SHORT, R.style.errorToast).show()
+                        StyleableToast.makeText(this, getString(R.string.str_signIn_error), Toast.LENGTH_SHORT, R.style.errorToast).show()
                     }
                 }
         } else {

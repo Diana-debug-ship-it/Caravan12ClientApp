@@ -5,3 +5,7 @@ data class UserInfo(
     var name: String? = "",
     var number: String? = "",
     var email: String? = "")
+
+
+
+
