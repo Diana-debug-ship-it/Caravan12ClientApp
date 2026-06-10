@@ -23,3 +23,5 @@
 * **База данных и Backend:** Firebase Realtime Database / Firestore (NoSQL архитектура).
 * **Аутентификация:** Firebase Authentication (управление сессиями пользователей).
 * **Архитектурный паттерн:** MVVM в обоих модулях для изоляции UI от сетевых запросов.
+
+Админская часть находится здесь: https://github.com/Diana-debug-ship-it/Caravan12AdminApp
